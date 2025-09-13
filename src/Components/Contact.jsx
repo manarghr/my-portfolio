@@ -26,8 +26,8 @@ function Contact() {
     setSubmitStatus("")
 
     try {
-      // This will connect to your Express.js backend
-      const response = await fetch("/api/contact", {
+      // Updated URL to connect to your Express.js backend NOW RENDER
+      const response = await fetch("https://portfolio-backend-1-yw88.onrender.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,13 +35,16 @@ function Contact() {
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
+      const result = await response.json()
+
+      if (response.ok && result.success) {
         setSubmitStatus("Message sent successfully!")
         setFormData({ name: "", email: "", subject: "", message: "" })
       } else {
-        setSubmitStatus("Failed to send message. Please try again.")
+        setSubmitStatus(result.message || "Failed to send message. Please try again.")
       }
     } catch (error) {
+      console.error("Error sending message:", error)
       setSubmitStatus("Failed to send message. Please try again.")
     }
 
@@ -65,8 +68,8 @@ function Contact() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black underline underline-offset-8">Get In Touch</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            I'm open to discussing new opportunities, interesting projects, or just having a chat about
-            technology. Let's create something amazing together!
+            I'm open to discussing new opportunities, interesting projects, or just having a chat about technology.
+            Let's create something amazing together!
           </p>
         </div>
 
@@ -78,7 +81,7 @@ function Contact() {
               <div className="space-y-4">
                 {/* Email */}
                 <div className="group p-4 rounded-xl border-2 bg-purple-50 border-purple-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
-                  <a href="mailto: gheribmanar2@gmail.com" className="flex items-center space-x-4">
+                  <a href="mailto:gheribmanar2@gmail.com" className="flex items-center space-x-4">
                     <div className="p-3 rounded-full bg-white shadow-md group-hover:shadow-lg transition-shadow duration-300">
                       <Mail className="h-5 w-5 text-purple-400" />
                     </div>
@@ -114,16 +117,16 @@ function Contact() {
                   href="https://github.com/manarghr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-4 bg-black rounded-full shadow-lg "
+                  className="group p-4 bg-black rounded-full shadow-lg"
                 >
-                  <Github className="h-6 w-6 text-white  transition-colors duration-300" />
+                  <Github className="h-6 w-6 text-white transition-colors duration-300" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/manar-gherib-68161b301/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative p-4 bg-[#0a66c2] rounded-full shadow-lg "
-            >
+                  className="group relative p-4 bg-[#0a66c2] rounded-full shadow-lg"
+                >
                   <Linkedin className="h-6 w-6 text-white" />
                 </a>
               </div>

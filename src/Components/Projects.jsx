@@ -26,7 +26,7 @@ function Projects() {
     {
       title: "Elevate Designathon ",
       description:
-        "A full-stack e-commerce solution built with React, featuring user authentication, payment processing, and admin dashboard.",
+        "Developed the official Elevate Designathon website for NCS Club with a team, ensuring responsive design, performance optimization, and seamless user experience.",
       image: "/Elevate.jpg",
       technologies: ["React", "Node.js", "Three.js", "MongoDB"],
       demo: "https://elevate2025.ncs-club.com/",
@@ -34,7 +34,7 @@ function Projects() {
     {
       title: "NcsHack Hackathon",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "Collaborated on developing the official NCSHack website, focusing on responsive layouts, clean UI, and an optimized user experience.",
       image: "/Ncshack.jpg",
       technologies: ["React", "Node.js", "MongoDB"],
       demo: "https://ncshack2025.ncs-club.com/",
