@@ -28,12 +28,11 @@ function Contact() {
     try {
       // Updated URL to connect to your Express.js backend NOW RENDER
       const response = await fetch("https://portfolio-backend-1-yw88.onrender.com/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ name, email, subject, message }),
+});
+
 
       const result = await response.json()
 
