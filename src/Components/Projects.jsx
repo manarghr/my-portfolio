@@ -26,7 +26,7 @@ function Projects() {
     {
       title: "Elevate Designathon ",
       description:
-        "Developed the official Elevate Designathon website for NCS Club with a team, ensuring responsive design, performance optimization, and seamless user experience.",
+        "Developed Elevate Designathon website for NCS Club with a team, ensuring responsive design, performance optimization, and seamless user experience.",
       image: "/Elevate.jpg",
       technologies: ["React", "Node.js", "Three.js", "MongoDB"],
       demo: "https://elevate2025.ncs-club.com/",
